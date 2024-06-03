@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.container {
+    background: #ccc;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(190px, 245px));
+    grid-template-rows: repeat(3, minmax(190px, auto));
+    gap: 10px;
+    justify-content: center;
+}
+
+.child {
+    padding: 15px;
+    background: #fff;
+    box-shadow: -1px 0px 20px 0px #0000002e;
+    border-bottom: 3px solid #ff4b13;
+    position: relative;
+}
+
+.child::before {
+    content: ",";
+    content: ",";
+    position: absolute;
+    color: #ccc;
+    bottom: 1%;
+    right: 2%;
+    font-size: 3.4rem;
+    margin: 0 15px;
+}
+
+.child::after {
+    content: ",";
+    position: absolute;
+    color: #ccc;
+    bottom: 1%;
+    right: 2%;
+    font-size: 3.4rem;
+}
+
+.child h3 {
+    font-size: 15px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+.child h5 {
+    margin: 6px 0 0;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #afacac;
+    text-transform: capitalize;
+}
+
+.child p {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    margin: 1rem 0;
+    line-height: 22px;
+}
+
+.child-1 {
+    grid-column: span 2;
+}
+
+.child-1>p:last-child {
+    font-Weight: normal;
+    font-size: 0.9em;
+}
+
+.child-2>p:last-child {
+    font-Weight: normal;
+    font-size: 15px;
+    word-spacing: -1px;
+}
+
+.child-3 {
+    background-color: black;
+    color: #fff;
+    grid-row: span 3;
+}
+
+.child-3>p {
+    font-weight: 500;
+    font-size: 15px;
+    word-spacing: 5px;
+}
+
+.child-3>p:last-child {
+
+    color: #eee;
+    font-Weight: normal;
+    font-size: 13px;
+    word-spacing: normal;
+    color: #eee;
+
+}
+
+.child-3>:last-child,
+.child-4>:last-child,
+.child-5>:last-child,
+.child-6>:last-child {
+    font-Weight: normal;
+    font-size: 13px;
+}
+
+
+.child-4 {
+    grid-row: 2 / 4;
+}
+
+.child-4>p:last-child {
+    color: #000;
+}
+
+.child-5 {
+    background-color: black;
+    color: #fff;
+    grid-column: 2 / 4;
+}
+
+.child-6 {
+    grid-row: 3 / 4;
+    grid-column: 2 / 4;
+}
+
+
+@media screen and (max-width:1050px) {
+    .container {
+        grid-template-columns: repeat(4, minmax(190px, 245px));
+        grid-template-rows: repeat(4, minmax(190px, auto));
+        overflow: overlay;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .child-1 {
+        grid-column: span 2;
+    }
+    .child.child-2 {
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
+    }
+
+    .child-3 {
+        background-color: black;
+        color: #fff;
+        grid-row: 1 / span 3;
+        order: 1;
+    }
+
+    .child-4 {
+        grid-row: 1 / span 3;
+    }
+
+    .child-5 {
+        background-color: black;
+        color: #fff;
+        grid-column: 1 / 3;
+    }
+
+    .child-6 {
+        grid-row: 4 / 4;
+        grid-column: 3 / 5;
+    }
+
+
+}
+
+@media screen and (max-width:800px) {
+    .container {
+        grid-template-columns: repeat(4, minmax(140px, 245px));
+        grid-template-rows: repeat(5, minmax(140px, auto));
+    }
+    .child-1 {
+        grid-column: 2/span 2;
+    }
+    .child.child-2 {
+        grid-column: 2 / 4;
+        grid-row: 1/2;
+    }
+
+    .child-3 {
+        background-color: black;
+        color: #fff;
+        grid-row: 1 / span 5;
+        order: 1;
+    }
+
+    .child-4 {
+        grid-row: 1 / span 5;
+    }
+
+    .child-5 {
+        background-color: black;
+        color: #fff;
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
+    }
+
+    .child-6 {
+        grid-row: 4 / 4;
+        grid-column: 2 / 4;
+    }
+
+
+}
+
+@media screen and (max-width:700px) {
+    .container {
+        grid-template-columns: repeat(4, minmax(auto, 245px));
+        grid-template-rows: repeat(6, minmax(auto, auto));
+    }
+    .child-1 {
+        grid-column: 1/span 4;
+    }
+    .child.child-2 {
+        grid-column: 1 / 5;
+        grid-row: 4/3;
+    }
+
+    .child-3 {
+        background-color: black;
+        color: #fff;
+        order: 1;
+        grid-row: 2 / span 1;
+        grid-column: 1 / 5;
+    }
+
+    .child-4 {
+        grid-row: 1 / span 1;
+        grid-column: 1/5;
+    }
+
+    .child-5 {
+        background-color: black;
+        color: #fff;
+        grid-column: 1 / 5;
+        grid-row: 5 / 4;
+    }
+
+    .child-6 {
+        grid-row: 6 / 6;
+        grid-column: 1 / 5;
+    }
+
+
+}
