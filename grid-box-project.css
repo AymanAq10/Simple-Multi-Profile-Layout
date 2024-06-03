@@ -217,6 +217,7 @@
     .container {
         grid-template-columns: repeat(4, minmax(auto, 245px));
         grid-template-rows: repeat(6, minmax(auto, auto));
+        padding: 25px;
     }
     .child-1 {
         grid-column: 1/span 4;
